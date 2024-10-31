@@ -1,0 +1,22 @@
+.ClickAppScreen {
+    position: relative;
+    top: 0px;
+    left: 20px;
+    height: calc(100vh - 85px);
+}
+
+.hello {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 30px;
+    width: 300px;
+    color: green;
+    font-size: 30px;
+}
+
+.counter {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+}

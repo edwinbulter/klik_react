@@ -1,0 +1,46 @@
+.cpuContainer {
+  margin: auto;    /* center horizontaly */
+  position: relative;
+  width: 300px;
+  height: calc(100vh - 85px);
+  top: 0;
+  text-align: left;
+  font-size: 10px;
+}
+
+table {
+  position: absolute;
+  top: 20px;
+  text-align: left;
+  overflow: hidden;
+  width: 300px;
+  /*margin: 0 auto;*/
+  display: table;
+}
+
+table td, th {
+  height: 30px;
+  padding: 5px 5px 5px 5px;
+}
+
+table tr {
+  text-align: left;
+}
+
+/* Background-color of the odd rows */
+table tr:nth-child(odd) {
+  background-color: #767A82;
+  color: white;
+}
+
+/* Background-color of the even rows */
+table tr:nth-child(even) {
+  background-color: #565A62;
+  color: white;
+}
+
+table th {
+  background-color: darkgreen;
+  text-align: center;
+}
+

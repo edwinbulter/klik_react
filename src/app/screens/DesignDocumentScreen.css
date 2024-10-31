@@ -1,0 +1,26 @@
+.Design {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.scrollable-div {
+    height: calc(100vh - 85px);
+    overflow: scroll;
+    text-align: left;
+    font-size: 12px;
+    color: black;
+    background: white;
+    padding-left: 10px;
+}
+
+.awsComponentsImage {
+    width: 100vw;
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.sequenceDiagramImage {
+    width: 100vw;
+    object-fit: contain;
+}

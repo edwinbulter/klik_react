@@ -9,7 +9,10 @@ function AboutScreen() {
                 This simple app is build with a React front-end and AWS Serverless back-end.
             </p>
             <p>
-                Feel free to check out the design and usage or create an account and add some clicks!
+                Resize the width of your browser to switch between between the default menu and the hamburger menu.
+            </p>
+            <p>
+                For the 'KLiK App' screen you will have to create an account. By doing so, your user will also show up in the Usage screen and show the number of times you clicked on the KLiK button.
             </p>
         </div>
     )

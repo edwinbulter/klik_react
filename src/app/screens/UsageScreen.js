@@ -1,4 +1,4 @@
-import './ClicksPerUserScreen.css'
+import './UsageScreen.css'
 import React, {useEffect, useState} from "react";
 import counterApi from "../../api/counterApi";
 
@@ -10,16 +10,23 @@ const colDefs= [
 ];
 
 
-function ClicksPerUserScreen() {
+function UsageScreen() {
     const [rowData, setRowData] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        loadData()
+    }, []);
+
+    function loadData() {
         async function fetchCounter() {
+            setLoading(true);
             const data = await counterApi.getAllCounters();
             setRowData(data);
+            setLoading(false);
         }
         fetchCounter();
-    }, []);
+    }
 
     const tableHeaders = colDefs.map(colDef =>
        <th key={colDef.name}>{colDef.name}</th>
@@ -34,8 +41,9 @@ function ClicksPerUserScreen() {
     );
 
     return (
-        <div className="cpuContainer">
-            <table>
+        <div className="usageContainer">
+            <button className="refreshButton" disabled={loading} onClick={loadData}>{loading ? "Loading..." : "Refresh"}</button>
+            <table className="usageTable">
                 <thead>
                 <tr>
                     {tableHeaders}
@@ -49,4 +57,4 @@ function ClicksPerUserScreen() {
     )
 }
 
-export default ClicksPerUserScreen;
+export default UsageScreen;

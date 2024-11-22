@@ -1,24 +1,15 @@
-/*.container {*/
-/*    text-align: left;*/
-/*    overflow: hidden;*/
-/*    min-width: 250px;*/
-/*    max-width: 350px;*/
-/*    margin: 0 auto;*/
-/*    display: table;*/
-/*    background-color: white;*/
-/*}*/
 
 .kliksTable {
     position: absolute;
     width: 250px;
-    top: 120px;
+    top: 60px;
 }
 
-table tr {
+.kliksTable tr {
     height: 40px;
 }
 
-table td {
+.kliksTable td {
     text-align: center;
 }
 
@@ -50,7 +41,7 @@ table td {
     text-align: center;
 }
 
-button {
+.klikButton {
     position: absolute;
     top: 0;
     width: 300px;

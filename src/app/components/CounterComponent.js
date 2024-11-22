@@ -5,20 +5,23 @@ import "./CounterComponent.css"
 function CounterComponent({userName}) {
     const [userCount, setUserCount] = useState(0);
     const [totalCount, setTotalCount] = useState(0);
+    const [loading, setLoading] = useState(true);
 
-    function useCounter(userName) {
-        useEffect(() => {
-            async function fetchCounter() {
+    useEffect(() => {
+        async function fetchCounter() {
+            try {
+                console.log("CounterComponent fetchCounter()");
                 const data = await counterApi.getCounter(userName);
                 setUserCount(data.user_counter);
                 setTotalCount(data.total_counter);
+            } finally {
+                setLoading(false);
             }
-            fetchCounter();
-        }, [userName]);
-    }
+        }
+        fetchCounter();
+    }, []);
 
     function CountFields() {
-        useCounter(userName);
         return (
             <>
                 <table className="kliksTable">
@@ -37,16 +40,21 @@ function CounterComponent({userName}) {
         )
     }
 
-    async function incrementCounter() {
-        const data = await counterApi.incrementCounter(userName);
-        setUserCount(data.user_counter);
-        setTotalCount(data.total_counter);
-    }
+    async function incrementCounter(){
+        try {
+            setLoading(true);
+            const data = await counterApi.incrementCounter(userName);
+            setUserCount(data.user_counter);
+            setTotalCount(data.total_counter);
+        } finally {
+            setLoading(false)
+        }
+     }
 
     return (
         <>
-            <button onClick={incrementCounter}>
-                KLiK
+            <button className="klikButton" disabled={loading} onClick={incrementCounter}>
+                {loading ? "Loading..." : "KLiK"}
             </button>
             <CountFields/>
         </>

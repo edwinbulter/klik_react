@@ -94,11 +94,6 @@ header {
     top: 100px;
 }
 
-.loginMobile {
-    @extend .button-mobile;
-    top: 130px;
-}
-
 .about {
     @extend .button-basic;
     left: 140px;
@@ -124,12 +119,6 @@ header {
     width: 70px;
 }
 
-.login {
-    @extend .button-basic;
-    left: 480px;
-    width: 70px;
-}
-
 .hamburger {
     display: none;
 }
@@ -151,7 +140,7 @@ header {
         position: relative;
         border-bottom: 1px solid #dee2e6;
         top: 0px;
-        height: 180px;
+        height: 140px;
         width: 100vw;
         font-family: Arial, Helvetica, sans-serif;
     }

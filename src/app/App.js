@@ -13,11 +13,10 @@ Amplify.configure(awsExports);
 function App() {
 
     const [showMenuItem, setShowMenuItem] = useState(undefined);
-    const [user, setUser] = useState(undefined);
 
     return (
         <Authenticator.Provider>
-        <ShowMenuItemContext.Provider value={{showMenuItem, setShowMenuItem, user, setUser}}>
+        <ShowMenuItemContext.Provider value={{showMenuItem, setShowMenuItem}}>
             <div className="totalScreen">
                 <AppHeaderComponent/>
                 <AppMainComponent/>

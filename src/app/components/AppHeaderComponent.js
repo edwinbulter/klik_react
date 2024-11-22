@@ -5,7 +5,6 @@ import {useAuthenticator} from '@aws-amplify/ui-react';
 
 function AppHeaderComponent() {
     const {showMenuItem, setShowMenuItem} = useContext(ShowMenuItemContext);
-    const {user, signOut} = useAuthenticator((context) => [context.user]);
     const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
     const refContainer = useRef();
     const [currentWidth, setCurrentWidth] = useState(0);
@@ -30,10 +29,6 @@ function AppHeaderComponent() {
 
     function showAbout() {
         setShowMenuItem("about");
-    }
-
-    function showLogin() {
-        setShowMenuItem("login");
     }
 
     const onClickHamburger = useCallback(() => {
@@ -67,16 +62,11 @@ function AppHeaderComponent() {
 
     function HamburgerMenu() {
         return (
-
             <div className="hamburgerMenu">
-
                 <button className="aboutMobile" onClick={showAbout} disabled={showMenuItem === "about"}>About</button>
                 <button className="designMobile" onClick={showDesign} disabled={showMenuItem === "design"}>Design</button>
                 <button className="klikAppMobile" onClick={showKlikApp} disabled={showMenuItem === "klikApp"}>KLiK App</button>
                 <button className="usageMobile" onClick={showUsage} disabled={showMenuItem === "usage"}>Usage</button>
-                <button className="loginMobile" onClick={showLogin} disabled={showMenuItem === "login"}>
-                    {user?.username ? "Logout" : "Login"}
-                </button>
             </div>)
     }
 
@@ -100,9 +90,6 @@ function AppHeaderComponent() {
                     <button className="klikApp" onClick={showKlikApp} disabled={showMenuItem === "klikApp"}>KLiK App
                     </button>
                     <button className="usage" onClick={showUsage} disabled={showMenuItem === "usage"}>Usage</button>
-                    <button className="login" onClick={showLogin} disabled={showMenuItem === "login"}>
-                        {user?.username ? "Logout" : "Login"}
-                    </button>
                 </div>
                 <Hamburger/>
             </div>
